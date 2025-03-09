@@ -33,13 +33,14 @@ Variables are: <br>
 <gitlab_url> <br>
 <state_name> <br>
 <gitlab_access_token> <br>
+<username> <br>
 
 ```
 terraform init \
     -backend-config="address=https://<gitlab_url>/api/v4/projects/<gitlab_project_id>/terraform/state/<state_name>" \
     -backend-config="lock_address=https://<gitlab_url>/api/v4/projects/<gitlab_project_id>/terraform/state/<state_name>/lock" \
     -backend-config="unlock_address=https://<gitlab_url>/api/v4/projects/<gitlab_project_id>/terraform/state/<state_name>/lock" \
-    -backend-config="username=jacer7" \ # your username
+    -backend-config="username=<username>" \ # your username
     -backend-config="password=<gitlab_access_token>" \ # your access token
     -backend-config="lock_method=POST" \
     -backend-config="unlock_method=DELETE" \
